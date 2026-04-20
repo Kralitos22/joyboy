@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p C:/joyboynew/joyboyv2/public/assets/img)",
+      "Bash(cp -r C:/data2/assets/img/* C:/joyboynew/joyboyv2/public/assets/img/)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(taskkill /PID 3196 /F)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -s -o /dev/null -w \"localhost:3000 - HTTP %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"192.168.1.8:3000 - HTTP %{http_code}\\\\n\" http://192.168.1.8:3000)",
+      "Bash(taskkill //PID 20384 //F)",
+      "Bash(taskkill //PID 1948 //F)",
+      "Bash(curl -s -o /dev/null -w \"localhost: %{url_effective}\\\\n\" -L http://localhost:3000)",
+      "Bash(taskkill //PID 21464 //F)",
+      "Bash(taskkill //IM node.exe //F)",
+      "Bash(taskkill //PID 21316 //F)",
+      "Bash(taskkill //PID 6888 //F)",
+      "Bash(curl -s -o /dev/null -w \"localhost: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"192.168.1.8: %{http_code}\\\\n\" http://192.168.1.8:3000)"
+    ]
+  }
+}
