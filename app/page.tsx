@@ -18,7 +18,7 @@ const navLinks = [
 const socialLinks = [
   { href: "https://x.com/JBCAI_OS", label: "𝕏", target: "_blank" },
   { href: "https://t.me/+9wI0StA89dtmYmQ1", label: "✈️", target: "_blank" },
-  { href: "https://github.com/joyboycat00-pixel", label: "💻", target: "_blank" },
+  { href: "https://discord.gg/g5UkhKqwPp", label: "💬", target: "_blank" },
 ];
 
 const galleryImages = [
@@ -54,17 +54,29 @@ export default function Home() {
   /* ---- COPY CA ---- */
   const copyCA = useCallback(() => {
     const allBtns = document.querySelectorAll<HTMLButtonElement>(".ca-copy, .ca-big-copy");
-    navigator.clipboard.writeText(CA).then(() => {
+    if (!navigator.clipboard?.writeText) {
+      console.warn("Clipboard API tidak tersedia pada browser ini.");
       allBtns.forEach((btn) => {
-        const orig = btn.textContent;
-        btn.textContent = "✅ Copied!";
-        btn.style.background = "#00c853";
-        setTimeout(() => {
-          btn.textContent = orig;
-          btn.style.background = "";
-        }, 2500);
+        btn.textContent = "📋 Copy";
       });
-    });
+      return;
+    }
+
+    navigator.clipboard.writeText(CA)
+      .then(() => {
+        allBtns.forEach((btn) => {
+          const orig = btn.textContent;
+          btn.textContent = "✅ Copied!";
+          btn.style.background = "#00c853";
+          setTimeout(() => {
+            btn.textContent = orig;
+            btn.style.background = "";
+          }, 2500);
+        });
+      })
+      .catch((err) => {
+        console.error("Gagal menyalin ke clipboard:", err);
+      });
   }, []);
 
   /* ---- PARTICLES ---- */
@@ -301,7 +313,7 @@ export default function Home() {
           <div className="hero-stats">
             <div className="stat"><span className="stat-num">1B</span><span className="stat-label">Total Supply</span></div>
             <div className="stat-div" />
-            <div className="stat"><span className="stat-num">0%</span><span className="stat-label">Dev Tokens</span></div>
+            <div className="stat"><span className="stat-num">50%</span><span className="stat-label">Agent AI</span></div>
             <div className="stat-div" />
             <div className="stat"><span className="stat-num">0%</span><span className="stat-label">Tax</span></div>
             <div className="stat-div" />
@@ -349,8 +361,8 @@ export default function Home() {
                 <div className="about-links-row">
                   <a href="https://t.me/+9wI0StA89dtmYmQ1" target="_blank" rel="noopener noreferrer" className="alink telegram">✈️ Telegram</a>
                   <a href="https://x.com/JBCAI_OS" target="_blank" rel="noopener noreferrer" className="alink xtwit">𝕏 Twitter</a>
+                  <a href="https://discord.gg/g5UkhKqwPp" target="_blank" rel="noopener noreferrer" className="alink discord">💬 Discord</a>
                   <a href="https://pump.fun/3cumPBwrpjn27vYtVKwsvXoytiT9gWonXrxsKDy6pump" target="_blank" rel="noopener noreferrer" className="alink pump">🔥 Pump.fun</a>
-                  <a href="https://github.com/joyboycat00-pixel" target="_blank" rel="noopener noreferrer" className="alink gh">💻 GitHub</a>
                 </div>
               </div>
               <div className="about-pills">
@@ -362,7 +374,7 @@ export default function Home() {
             </div>
             <div className="about-cards">
               {[
-                { icon: "🛡️", title: "0% Dev Ownership", desc: "Bought 0.5 SOL at launch and burned it all. Verified on-chain." },
+                { icon: "🛡️", title: "50% Agent AI Marketing", desc: "50% of total creator rewards go to Agent AI Marketing Company. Verified on-chain." },
                 { icon: "🔥", title: "LP Burned", desc: "Liquidity locked forever. No rug possible. Safety guaranteed." },
                 { icon: "🌍", title: "100% Community", desc: "You own this. No team wallets. Pure organic growth." },
                 { icon: "⚡", title: "0% Tax", desc: "Buy and sell freely. No hidden fees. Zero slippage tax." },
@@ -477,7 +489,7 @@ export default function Home() {
               {[
                 { color: "#f7df1e", title: "Total Supply", value: "1,000,000,000 $JOYBOY", pct: "100%" },
                 { color: "#00ffc8", title: "Liquidity Pool", value: "Burned forever 🔥", pct: "100%" },
-                { color: "#ff6b6b", title: "Dev Allocation", value: "Zero. None. Nada.", pct: "0%" },
+                { color: "#ff6b6b", title: "Agent AI Marketing", value: "50% Creator Rewards", pct: "50%" },
                 { color: "#ff9f43", title: "Buy/Sell Tax", value: "Completely zero", pct: "0%" },
               ].map((row) => (
                 <div key={row.title} className="token-row">
@@ -487,7 +499,7 @@ export default function Home() {
                 </div>
               ))}
               <div className="token-highlight">
-                <p>🐱 <strong>SYMBOL OF FREEDOM</strong> — 0% Developer Ownership. 100% Community-Driven.</p>
+                <p>🐱 <strong>SYMBOL OF FREEDOM</strong> — 50% Agent AI Marketing. 50% Community-Driven.</p>
               </div>
             </div>
           </div>
@@ -537,7 +549,7 @@ export default function Home() {
           <div className="fair-grid">
             {[
               { icon: "🚫", title: "No Pre-mining", desc: "We all start from scratch." },
-              { icon: "🤝", title: "No Team Allocation", desc: "Devs buy at same price as you." },
+              { icon: "🤝", title: "50% Agent AI Marketing", desc: "50% creator rewards allocated to Agent AI Marketing Company." },
               { icon: "🔥", title: "LP Burned Forever", desc: "Liquidity permanently locked." },
               { icon: "💎", title: "Community Driven", desc: "You&apos;re in control, not bots." },
             ].map((card) => (
@@ -580,10 +592,10 @@ export default function Home() {
               <p>Join the crew! Alpha, updates &amp; community all in one place.</p>
               <span className="social-arrow">→</span>
             </a>
-            <a href="https://github.com/joyboycat00-pixel" target="_blank" rel="noopener noreferrer" className="social-card github">
-              <div className="social-icon">💻</div>
-              <h3>GitHub</h3>
-              <p>Open source pixel art &amp; project repo</p>
+            <a href="https://discord.gg/g5UkhKqwPp" target="_blank" rel="noopener noreferrer" className="social-card discord">
+              <div className="social-icon">💬</div>
+              <h3>Discord</h3>
+              <p>Join as a member! Connect with the community &amp; stay updated.</p>
               <span className="social-arrow">→</span>
             </a>
           </div>
