@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://x.com/JBCAI_OS", label: "𝕏", target: "_blank" },
+  { href: "https://x.com/JBC_OS", label: "𝕏", target: "_blank" },
   { href: "https://t.me/+9wI0StA89dtmYmQ1", label: "✈️", target: "_blank" },
   { href: "https://discord.gg/c2qEtDv9gZ", label: "💬", target: "_blank" },
 ];
