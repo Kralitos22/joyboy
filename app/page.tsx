@@ -18,7 +18,7 @@ const navLinks = [
 const socialLinks = [
   { href: "https://x.com/JBCAI_OS", label: "𝕏", target: "_blank" },
   { href: "https://t.me/+9wI0StA89dtmYmQ1", label: "✈️", target: "_blank" },
-  { href: "https://discord.gg/kmHx2wtg2c", label: "💬", target: "_blank" },
+  { href: "https://discord.gg/c2qEtDv9gZ", label: "💬", target: "_blank" },
 ];
 
 const galleryImages = [
@@ -361,7 +361,7 @@ export default function Home() {
                 <div className="about-links-row">
                   <a href="https://t.me/+9wI0StA89dtmYmQ1" target="_blank" rel="noopener noreferrer" className="alink telegram">✈️ Telegram</a>
                   <a href="https://x.com/JBCAI_OS" target="_blank" rel="noopener noreferrer" className="alink xtwit">𝕏 Twitter</a>
-                  <a href="https://discord.gg/kmHx2wtg2c" target="_blank" rel="noopener noreferrer" className="alink discord">💬 Discord</a>
+                  <a href="https://discord.gg/c2qEtDv9gZ" target="_blank" rel="noopener noreferrer" className="alink discord">💬 Discord</a>
                   <a href="https://pump.fun/3cumPBwrpjn27vYtVKwsvXoytiT9gWonXrxsKDy6pump" target="_blank" rel="noopener noreferrer" className="alink pump">🔥 Pump.fun</a>
                 </div>
               </div>
@@ -592,7 +592,7 @@ export default function Home() {
               <p>Join the crew! Alpha, updates &amp; community all in one place.</p>
               <span className="social-arrow">→</span>
             </a>
-            <a href="https://discord.gg/kmHx2wtg2c" target="_blank" rel="noopener noreferrer" className="social-card discord">
+            <a href="https://discord.gg/c2qEtDv9gZ" target="_blank" rel="noopener noreferrer" className="social-card discord">
               <div className="social-icon">💬</div>
               <h3>Discord</h3>
               <p>Join as a member! Connect with the community &amp; stay updated.</p>
